@@ -1,0 +1,38 @@
+home_index:
+    path:     /
+    defaults: { _controller: "ReformesHomeBundle:Home:index" }
+    methods:  GET
+
+home_axes:
+    path:     /axes
+    defaults: { _controller: "ReformesHomeBundle:Home:axes" }
+    methods:  GET
+    
+home_actions:
+    path:     /actions
+    defaults: { _controller: "ReformesHomeBundle:Home:actions" }
+    methods:  GET
+home_documentation:
+    path:     /documentation
+    defaults: { _controller: "ReformesHomeBundle:Home:documentation" }
+    methods:  GET
+    
+home_didacticiels:
+    path:     /didacticiels
+    defaults: { _controller: "ReformesHomeBundle:Home:didacticiels" }
+    methods:  GET
+
+home_grandpublic:
+    path:     /grandpublic
+    defaults: { _controller: "ReformesHomeBundle:Home:grandpublic" }
+    methods:  GET
+    
+home_medias:
+    path:     /medias
+    defaults: { _controller: "ReformesHomeBundle:Home:medias" }
+    methods:  GET
+    
+home_faq:
+    path:     /faq
+    defaults: { _controller: "ReformesHomeBundle:Home:faq" }
+    methods:  GET

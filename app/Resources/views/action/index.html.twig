@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Actions list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Objet</th>
+                <th>Description</th>
+                <th>Datedebut</th>
+                <th>Datefin</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for action in actions %}
+            <tr>
+                <td><a href="{{ path('action_show', { 'id': action.id }) }}">{{ action.id }}</a></td>
+                <td>{{ action.objet }}</td>
+                <td>{{ action.description }}</td>
+                <td>{% if action.dateDebut %}{{ action.dateDebut|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if action.dateFin %}{{ action.dateFin|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('action_show', { 'id': action.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('action_edit', { 'id': action.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('action_new') }}">Create a new action</a>
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Blogs list</h1>
+<div class="form-group">
+            <a href="{{ path('blog_new') }}" class="btn btn-primary">Create a new blog</a>
+</div>
+    <table class="table table-bordered table-responsive">
+        <thead class="thead-light">
+            <tr>
+                <th>Id</th>
+                <th>Corps</th>
+                <th>Dateedition</th>
+                <th>Titre</th>
+                <th>Dateexpiration</th>
+                <th>Statecode</th>
+                <th>Dateedit</th>
+                <th>Datecreate</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for blog in blogs %}
+                <tr>
+                    <td><a href="{{ path('blog_show', { 'id': blog.id }) }}">{{ blog.id }}</a></td>
+                    <td>{{ blog.corps }}</td>
+                    <td>{% if blog.dateEdition %}{{ blog.dateEdition|date('Y-m-d H:i:s') }}{% endif %}</td>
+                    <td>{{ blog.titre }}</td>
+                    <td>{% if blog.dateExpiration %}{{ blog.dateExpiration|date('Y-m-d H:i:s') }}{% endif %}</td>
+                    <td>{{ blog.stateCode }}</td>
+                    <td>{{ blog.dateEdit }}</td>
+                    <td>{% if blog.dateCreate %}{{ blog.dateCreate|date('Y-m-d H:i:s') }}{% endif %}</td>
+                    <td>
+                        <ul>
+                            <li>
+                                <a href="{{ path('blog_show', { 'id': blog.id }) }}">show</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('blog_edit', { 'id': blog.id }) }}">edit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

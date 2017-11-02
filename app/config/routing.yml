@@ -1,0 +1,15 @@
+reformes_home:
+    resource: "@ReformesHomeBundle/Resources/config/routing.yml"
+    prefix:   /
+
+reformes_actions_action:
+    resource: "@ReformesActionsBundle/Controller/ActionController.php"
+    type:     annotation
+
+reformes_actions:
+    resource: "@ReformesActionsBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation

@@ -1,0 +1,7 @@
+reformes_actions_blog:
+    resource: "@ReformesActionsBundle/Resources/config/routing/blog.yml"
+    prefix:   /blog
+
+reformes_actions_homepage:
+    path:     /
+    defaults: { _controller: ReformesActionsBundle:Action:index }

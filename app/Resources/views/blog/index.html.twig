@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <style>
+ 
+#corps-balise {
+    
+    display: block; /* Fallback for non-webkit */
+  display: -webkit-box;
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+    /*white-space: nowrap; 
+    //overflow: hidden;
+    //text-overflow: ellipsis; */
+}
+    </style>
+
+<h1 class="my-4">Page Heading
+            <small>Blogs list</small>
+            <div class="form-group">
+            <a href="{{ path('blog_new') }}" class="btn btn-primary">Create a new blog</a>
+</div>
+          </h1>
+
+        
+            {% for blog in blogs %}
+                <!-- Blog Post -->
+          <div class="card mb-4">
+            <img class="card-img-top" src="http://placehold.it/750x250" alt="Card image cap">
+            <div class="card-body">
+              <h2 class="card-title">{{ blog.titre }}</h2>
+              <p class="card-text">
+              <div id="corps-balise">{{ blog.corps }}</div></p>
+              <a href="{{ path('blog_show', { 'id': blog.id }) }}" class="btn btn-primary">Read More &rarr;</a>
+            </div>
+            <div class="card-footer text-muted">
+              Posted on {% if blog.dateEdition %}{{ blog.dateEdition|date('Y-m-d H:i:s') }}{% endif %} by
+              <a href="#">Start Bootstrap</a>
+            </div>
+          </div>
+               
+            {% endfor %}
+            
+ <!-- Pagination -->
+          <ul class="pagination justify-content-center mb-4">
+            <li class="page-item">
+              <a class="page-link" href="#">&larr; Older</a>
+            </li>
+            <li class="page-item disabled">
+              <a class="page-link" href="#">Newer &rarr;</a>
+            </li>
+          </ul>
+
+{% endblock %}

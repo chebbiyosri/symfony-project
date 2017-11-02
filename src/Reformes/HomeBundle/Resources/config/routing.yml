@@ -1,0 +1,8 @@
+reformes_home_home:
+    resource: "@ReformesHomeBundle/Resources/config/routing/home.yml"
+    prefix:   /
+
+
+reformes_home_homepage:
+    path:     /
+    defaults: { _controller: ReformesHomeBundle:Home:index }

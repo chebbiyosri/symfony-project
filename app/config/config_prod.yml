@@ -1,5 +1,5 @@
 imports:
-    - { resource: parameters_production.php }
+    - { resource: parameters_prod.yml }
     - { resource: config.yml }
 
 #doctrine:

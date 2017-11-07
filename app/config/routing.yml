@@ -1,3 +1,7 @@
+sides_poll:
+    resource: "@SidesPollBundle/Resources/config/routing.yml"
+    prefix:   /
+    
 reformes_home:
     resource: "@ReformesHomeBundle/Resources/config/routing.yml"
     prefix:   /

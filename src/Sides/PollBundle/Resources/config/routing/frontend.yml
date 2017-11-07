@@ -1,0 +1,18 @@
+SidesPollBundle_frontend_poll_list:
+    path:     /list
+    defaults: { _controller: SidesPollBundle:Frontend\Poll:list }
+    methods:  GET
+ 
+   
+SidesPollBundle_frontend_poll_vote:
+    path:     /vote/{pollId}
+    defaults: { _controller: SidesPollBundle:Frontend\Poll:vote }
+    methods:  [GET, POST]
+    
+
+SidesPollBundle_frontend_poll_results:
+    path:  /results/{pollId}
+    defaults: { _controller: SidesPollBundle:Frontend\Poll:results }
+    methods:  GET
+    
+    

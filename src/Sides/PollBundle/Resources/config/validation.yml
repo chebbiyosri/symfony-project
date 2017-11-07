@@ -1,0 +1,9 @@
+Sides\PollBundle\Entity\BasePoll:
+    properties:
+        name:
+            - NotBlank: ~
+
+Sides\PollBundle\Entity\BaseOpinion:
+    properties:
+        name:
+            - NotBlank: ~

@@ -18,6 +18,7 @@ class AppKernel extends Kernel
             new AppBundle\AppBundle(),
             new Reformes\ActionsBundle\ReformesActionsBundle(),
             new Reformes\HomeBundle\ReformesHomeBundle(),
+            new Sides\PollBundle\SidesPollBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

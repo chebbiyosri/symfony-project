@@ -1,0 +1,7 @@
+SidesPollBundle_backend:
+    prefix: /poll/backend
+    resource: "@SidesPollBundle/Resources/config/routing/backend.yml"
+
+SidesPollBundle_frontend:
+    prefix: /poll
+    resource: "@SidesPollBundle/Resources/config/routing/frontend.yml"

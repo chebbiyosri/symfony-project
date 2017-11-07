@@ -1,0 +1,14 @@
+SidesPollBundle_backend_poll_list:
+    path:  /list
+    defaults: { _controller: SidesPollBundle:Backend\Poll:list }
+    methods:  GET
+
+SidesPollBundle_backend_poll_edit:
+    path:  /edit/{pollId}
+    methods:  [GET, POST]
+    defaults: { _controller: SidesPollBundle:Backend\Poll:edit, pollId: 0 }
+
+SidesPollBundle_backend_poll_delete:
+    path:  /delete/{pollId}
+    methods:  DELETE
+    defaults: { _controller: SidesPollBundle:Backend\Poll:delete }

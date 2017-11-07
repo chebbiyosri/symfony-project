@@ -5,6 +5,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 /**
  * @ORM\MappedSuperclass
+ * @ORM\Table(name="poll")
  */
 abstract class BasePoll
 {

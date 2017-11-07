@@ -6,6 +6,7 @@ use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * @ORM\MappedSuperclass
+ * @ORM\Table(name="opinion")
  */
 abstract class BaseOpinion
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Prism\PollBundle\Form;
+namespace Sides\PollBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -40,7 +40,7 @@ class OpinionType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Prism\PollBundle\Entity\Opinion',
+            'data_class' => 'Sides\PollBundle\Entity\Opinion',
         ));
     }
 }

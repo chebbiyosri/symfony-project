@@ -1,11 +1,11 @@
-{% extends 'PrismPollBundle:Backend:layout.html.twig' %}
+{% extends 'SidesPollBundle:Backend:layout.html.twig' %}
 
 {% block content %}
     <div id="polls_list">
 
         <h1>Polls List</h1>
 
-        <a href="{{ path('PrismPollBundle_backend_poll_edit') }}" id="add_new">+ New Poll</a>
+        <a href="{{ path('SidesPollBundle_backend_poll_edit') }}" id="add_new">+ New Poll</a>
 
         {% if app.session.flashbag.has('success') %}
             <div id="success">
@@ -29,7 +29,7 @@
                 {% for poll in polls %}
                     <tr>
                         <th>
-                            <a href="{{ path('PrismPollBundle_backend_poll_edit', { pollId: poll.id }) }}">{{ poll }}</a>
+                            <a href="{{ path('SidesPollBundle_backend_poll_edit', { pollId: poll.id }) }}">{{ poll }}</a>
                         </th>
                         <td class="integer">
                             {{ poll.totalVotes }}
@@ -49,7 +49,7 @@
                             {% endif %}
                         </td>
                         <td class="delete">
-                            <a href="{{ path('PrismPollBundle_backend_poll_delete', { pollId: poll.id }) }}"><img src="{{ asset('bundles/prismpoll/images/delete.png') }}" width="10" height="10" alt="Delete" /></a>
+                            <a href="{{ path('SidesPollBundle_backend_poll_delete', { pollId: poll.id }) }}"><img src="{{ asset('bundles/prismpoll/images/delete.png') }}" width="10" height="10" alt="Delete" /></a>
                         </td>
                     </tr>
                 {% endfor %}

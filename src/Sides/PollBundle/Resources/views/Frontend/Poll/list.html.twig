@@ -1,4 +1,4 @@
-{% extends 'PrismPollBundle:Frontend:layout.html.twig' %}
+{% extends 'SidesPollBundle:Frontend:layout.html.twig' %}
 
 {% block content %}
     <div id="polls_list">
@@ -11,7 +11,7 @@
                     <li>
                         <h2>{{ poll }}</h2>
                         <div class="content">
-                            {{ render(controller('PrismPollBundle:Frontend\\Poll:Vote', { 'pollId': poll.id })) }}
+                            {{ render(controller('SidesPollBundle:Frontend\\Poll:Vote', { 'pollId': poll.id })) }}
                         </div>
                     </li>
                 {% endfor %}

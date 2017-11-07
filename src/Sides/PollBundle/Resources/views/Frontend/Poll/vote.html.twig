@@ -1,6 +1,6 @@
-{% form_theme form 'PrismPollBundle:Frontend:form_custom_layout.html.twig' %}
+{% form_theme form 'SidesPollBundle:Frontend:form_custom_layout.html.twig' %}
 
-<form action="{{ path('PrismPollBundle_frontend_poll_vote', {'pollId': poll.id }) }}" method="post" novalidate="novalidate" {{ form_enctype(form) }}>
+<form action="{{ path('SidesPollBundle_frontend_poll_vote', {'pollId': poll.id }) }}" method="post" novalidate="novalidate" {{ form_enctype(form) }}>
 
     {{ form_errors(form.opinions) }}
     {{ form_widget(form.opinions) }}
@@ -10,4 +10,4 @@
     <input type="submit" value="Submit" />
 </form>
 
-<a href="{{ path('PrismPollBundle_frontend_poll_results', {'pollId': poll.id }) }}" class="see_results">View results</a>
+<a href="{{ path('SidesPollBundle_frontend_poll_results', {'pollId': poll.id }) }}" class="see_results">View results</a>

@@ -1,6 +1,6 @@
 <?php
 
-namespace Prism\PollBundle\Form;
+namespace Sides\PollBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;

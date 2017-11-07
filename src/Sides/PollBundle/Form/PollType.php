@@ -1,34 +1,43 @@
 <?php
 
-namespace Prism\PollBundle\Form;
+namespace Sides\PollBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
+use Sides\PollBundle\Form\OpinionType;
 
 /**
  * PollType
  */
-class PollType extends AbstractType
-{
+class PollType extends AbstractType {
+
     /**
      * Build Form
      *
      * @param FormBuilderInterface $builder
      * @param array                $options
      */
-    public function buildForm(FormBuilderInterface $builder, array $options)
-    {
+    public function buildForm(FormBuilderInterface $builder, array $options) {
         $builder
-            ->add('name')
-            ->add('published')
-            ->add('closed')
-            ->add('opinions', 'collection', array(
-                'type' => new $options['opinion_form'],
-                'allow_add' => true,
-                'allow_delete' => true,
-                'by_reference' => false
-            ));
+                ->add('name', TextType::class)
+                ->add('published', CheckboxType::class, array(
+                    'label' => 'Published ?',
+                    'required' => false,
+                ))
+                ->add('closed', CheckboxType::class, array(
+                    'label' => 'Closed ?',
+                    'required' => false,
+                ))
+                ->add('opinions', CollectionType::class, array(
+                    'entry_type' => OpinionType::class,
+                    'allow_add' => true,
+                    'allow_delete' => true,
+                    'prototype' => true,
+        ));
     }
 
     /**
@@ -36,8 +45,7 @@ class PollType extends AbstractType
      *
      * @return string
      */
-    public function getName()
-    {
+    public function getName() {
         return 'poll';
     }
 
@@ -46,11 +54,11 @@ class PollType extends AbstractType
      *
      * @param OptionsResolverInterface $resolver
      */
-    public function setDefaultOptions(OptionsResolverInterface $resolver)
-    {
+    public function setDefaultOptions(OptionsResolverInterface $resolver) {
         $resolver->setDefaults(array(
-            'opinion_form' => 'Prism\PollBundle\Form\OpinionType',
+            'opinion_form' => 'Sides\PollBundle\Form\OpinionType',
             'cascade_validation' => true
         ));
     }
+
 }

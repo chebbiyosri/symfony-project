@@ -27,7 +27,7 @@
                 {% if hasVoted %}
                     &nbsp;
                 {% else %}
-                    <a href="{{ path('PrismPollBundle_frontend_poll_vote', {'pollId': poll.id }) }}" class="see_form">Vote</a>
+                    <a href="{{ path('SidesPollBundle_frontend_poll_vote', {'pollId': poll.id }) }}" class="see_form">Vote</a>
                 {% endif %}
             </td>
             <td colspan="2" class="total">
